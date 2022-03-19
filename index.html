@@ -23,7 +23,6 @@
             font-family: Arial, Helvetica, sans-serif;
             background-color: var(--color-dark1);
             color: var(--color-white);
-            height: 100vh;
         }
         .img_logo_header{
             width: 45px;
@@ -43,10 +42,13 @@
         }
         .navigation_header{
             gap: 3em;
+            z-index: 2;
         }
         .content{
             padding-top: 5em;
             text-align: center;
+            height: 100vh;
+            transition: 1s;
         }
         .navigation_header a{
             text-decoration: none;
@@ -113,13 +115,14 @@
             <a href="#">Contato</a>
         </div>
     </div>
-    <div class="content">
+    <div class="content" id="content">
         <h1>Menu Responsivo - Gustavo Neitzke</h1>
     </div>
 </body>
 <script>
     var header           = document.getElementById('header');
     var navigationHeader = document.getElementById('navigation_header');
+    var content          = document.getElementById('content');
     var showSidebar      = false;
 
     function toggleSidebar()
@@ -129,11 +132,13 @@
         {
             navigationHeader.style.marginLeft = '-10vw';
             navigationHeader.style.animationName = 'showSidebar';
+            content.style.filter = 'blur(2px)';
         }
         else
         {
             navigationHeader.style.marginLeft = '-100vw';
             navigationHeader.style.animationName = '';
+            content.style.filter = '';
         }
     }
 
