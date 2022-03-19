@@ -115,7 +115,7 @@
             <a href="#">Contato</a>
         </div>
     </div>
-    <div class="content" id="content">
+    <div tabindex="0" class="content" onfocus="closeSidebar()" id="content">
         <h1>Menu Responsivo - Gustavo Neitzke</h1>
     </div>
 </body>
@@ -139,6 +139,15 @@
             navigationHeader.style.marginLeft = '-100vw';
             navigationHeader.style.animationName = '';
             content.style.filter = '';
+        }
+    }
+
+    function closeSidebar()
+    {
+        if(showSidebar)
+        {
+            showSidebar = true;
+            toggleSidebar();
         }
     }
 
